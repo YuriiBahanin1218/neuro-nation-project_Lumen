@@ -27,5 +27,5 @@ RUN composer install
 COPY . .
 
 # Expose port 9000 and start PHP-FPM
-EXPOSE 8000
+EXPOSE 9000
 CMD ["php-fpm"]
