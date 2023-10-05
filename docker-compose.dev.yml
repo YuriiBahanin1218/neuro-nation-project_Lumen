@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "8000:8000" 
+    volumes:
+      - .:/var/www
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: lumen_db
+      MYSQL_USER: lumen_user
+      MYSQL_PASSWORD: secret
